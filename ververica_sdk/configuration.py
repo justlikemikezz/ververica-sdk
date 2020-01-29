@@ -32,7 +32,7 @@ class Configuration(object):
 
     _default = None
 
-    def __init__(self):
+    def __init__(self, env='dev'):
         """Constructor"""
         if self._default:
             for key in self._default.__dict__.keys():
@@ -40,7 +40,7 @@ class Configuration(object):
             return
 
         # Default Base url
-        self.host = "https://ververica.prod.bird.co"
+        self.host = f"https://ververica.{env}.bird.co"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
